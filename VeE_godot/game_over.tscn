@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdrl42aixi6m6"]
+
+[ext_resource type="Script" path="res://game_over.gd" id="1_ojpt0"]
+[ext_resource type="Texture2D" uid="uid://de12vwjem6md7" path="res://wallpaper.jpg" id="2_vru24"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n82eb"]
+bg_color = Color(0.168627, 0, 0.282353, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Game_over" type="Node2D"]
+script = ExtResource("1_ojpt0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(643, 355)
+scale = Vector2(1.26758, 0.792969)
+texture = ExtResource("2_vru24")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 459.0
+offset_top = 250.0
+offset_right = 831.0
+offset_bottom = 340.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.109804, 0.92549, 0.972549, 1)
+theme_override_font_sizes/font_size = 65
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 530.0
+offset_top = 389.0
+offset_right = 770.0
+offset_bottom = 457.0
+theme_override_colors/font_pressed_color = Color(0, 0, 0.694118, 1)
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_n82eb")
+text = "TRY AGAIN"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

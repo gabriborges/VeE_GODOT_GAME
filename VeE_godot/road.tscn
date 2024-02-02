@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdpu8bt16cyol"]
+
+[ext_resource type="Texture2D" uid="uid://biy001prue58m" path="res://Mini Pixel Pack 2/Levels/Winter_road (64 x 64).png" id="1_6utny"]
+[ext_resource type="Script" path="res://Road.gd" id="2_0j08a"]
+
+[node name="Road" type="ParallaxBackground"]
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(20, 11.25)
+texture = ExtResource("1_6utny")
+script = ExtResource("2_0j08a")

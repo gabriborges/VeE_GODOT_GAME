@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://52iwbrevjlhr"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_lj7vx"]
+[ext_resource type="Texture2D" uid="uid://chhgmt1ryg7yv" path="res://wallpaper2.jpg" id="2_j1kec"]
+[ext_resource type="Texture2D" uid="uid://b21370xqixuav" path="res://logo.png" id="3_vxkmv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5n1kw"]
+bg_color = Color(0.376471, 0.694118, 0.862745, 1)
+border_width_left = 5
+border_width_bottom = 5
+border_color = Color(0.615686, 0.843137, 0.937255, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3fau"]
+bg_color = Color(0.0588235, 0.0784314, 0.223529, 1)
+border_width_left = 5
+border_width_bottom = 5
+border_color = Color(0.188235, 0.317647, 0.54902, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Main" type="Node2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_lj7vx")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(637, 355)
+scale = Vector2(1.25391, 0.748047)
+texture = ExtResource("2_j1kec")
+
+[node name="play" type="Button" parent="."]
+offset_left = 27.0
+offset_top = 372.0
+offset_right = 321.0
+offset_bottom = 445.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_5n1kw")
+text = "PLAY"
+
+[node name="quit" type="Button" parent="."]
+offset_left = 23.0
+offset_top = 468.0
+offset_right = 322.0
+offset_bottom = 542.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_a3fau")
+text = "QUIT
+"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 967.0
+offset_top = 681.0
+offset_right = 1270.0
+offset_bottom = 796.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Developer: Gabriel Borges
+"
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = 709.0
+offset_top = 31.0
+offset_right = 1255.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(0.737255, 0.329412, 0.603922, 1)
+theme_override_colors/font_shadow_color = Color(0.262745, 0.258824, 0.572549, 1)
+theme_override_font_sizes/font_size = 55
+text = "Velozes e Estudiosos"
+
+[node name="LOGO" type="Sprite2D" parent="."]
+position = Vector2(669, 97)
+scale = Vector2(0.679824, 0.679824)
+texture = ExtResource("3_vxkmv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="pressed" from="play" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_p_lay_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
